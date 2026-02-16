@@ -1,0 +1,44 @@
+{
+  "name": "@securework/contracts",
+  "version": "0.1.0",
+  "description": "Smart contracts for SecureWork Protocol",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "compile": "hardhat compile",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network goerli",
+    "verify": "hardhat verify",
+    "lint": "npm run lint:sol && npm run lint:js",
+    "lint:sol": "solhint 'contracts/**/*.sol'",
+    "lint:js": "eslint '**/*.js'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix && eslint '**/*.js' --fix",
+    "clean": "hardhat clean",
+    "build": "hardhat compile"
+  },
+  "keywords": [
+    "ethereum",
+    "smart-contracts",
+    "web3",
+    "defi",
+    "escrow",
+    "bug-bounty"
+  ],
+  "author": "SecureWork Protocol",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "solhint": "^4.0.0",
+    "eslint": "^8.50.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
