@@ -334,3 +334,10 @@ Inspired by:
   <p>Built with ❤️ by developers, for developers</p>
 </div>
 ```
+# SecureWork Protocol - Smart Contracts
+
+![Tests](https://github.com/securework-xyz/securework-contracts/actions/workflows/test.yml/badge.svg)
+![Security](https://github.com/securework-xyz/securework-contracts/actions/workflows/security.yml/badge.svg)
+![Coverage](https://codecov.io/gh/securework-xyz/securework-contracts/branch/main/graph/badge.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+
