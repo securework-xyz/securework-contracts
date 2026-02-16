@@ -302,7 +302,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🔗 Links
 
 - **Website:** [Coming Soon]
-- **Twitter:** [@SecureWorkHQ](https://twitter.com/SecureWorkHQ)
+- **Twitter:** (https://x.com/SecureWorkHQ)
 - **Discord:** [Coming Soon]
 - **Documentation:** [Coming Soon]
 - **Blog:** [Coming Soon]
@@ -312,11 +312,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Contact
 
 Have questions? Reach out:
-- Twitter: [@SecureWorkHQ](https://twitter.com/SecureWorkHQ)
-- Email: hello@securework.xyz (or your email)
-- GitHub Issues: [Create an issue](https://github.com/SecureWorkProtocol/securework-contracts/issues)
-
----
+- Twitter: (https://twitter.com/SecureWorkHQ)
+- Email: anna2005frank@gmail.com
 
 ## 🙏 Acknowledgments
 
@@ -337,9 +334,3 @@ Inspired by:
   <p>Built with ❤️ by developers, for developers</p>
 </div>
 ```
-
-### **Шаг 2: Сохрани README**
-1. Прокрути вниз
-2. В поле **"Commit message"** напиши:
-```
-docs: Add comprehensive README
