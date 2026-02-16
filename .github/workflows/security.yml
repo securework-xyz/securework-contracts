@@ -1,0 +1,82 @@
+name: Security Checks
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run every Monday at 9am UTC
+    - cron: '0 9 * * 1'
+
+jobs:
+  slither:
+    name: Slither Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install Slither
+      run: |
+        pip install slither-analyzer
+        pip install solc-select
+        solc-select install 0.8.20
+        solc-select use 0.8.20
+        
+    - name: Run Slither
+      run: slither . --print human-summary
+      continue-on-error: true
+
+  mythril:
+    name: Mythril Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install Mythril
+      run: pip install mythril
+      
+    - name: Run Mythril
+      run: |
+        myth analyze contracts/FreelanceEscrow.sol --solc-json mythril.config.json
+      continue-on-error: true
+
+  dependencies:
+    name: Check Dependencies
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        
+    - name: Run npm audit
+      run: npm audit --audit-level=moderate
+      continue-on-error: true
+      
+    - name: Check for outdated packages
+      run: npm outdated
+      continue-on-error: true
+```
+
+**Commit message:**
+```
+ci: Add security scanning workflows
